@@ -35,9 +35,7 @@ def donuts(count):
 # is less than 2, return instead the empty string.
 def both_ends(s):
   if len(s) < 2 : return ''
-  f2 = s[:2]
-  l2 = s[-2:]
-  return f2+l2
+  return s[:2] + s[-2:]
 
 
 # C. fix_start
@@ -62,8 +60,9 @@ def fix_start(s):
 #   'dog', 'dinner' -> 'dig donner'
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
-  # +++your code here+++
-  return
+  c = b[0:2] + a[2:]
+  d = a[0:2] + b[2:]
+  return '{0} {1}'.format(c, d)
 
 
 # Provided simple test() function used in main() to print
