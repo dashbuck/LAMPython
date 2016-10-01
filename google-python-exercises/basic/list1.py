@@ -33,15 +33,12 @@ def match_ends(words):
 # Hint: this can be done by making 2 lists and sorting each of them
 # before combining them.
 def front_x(words):
-  (xciting, abc) = ([],[])
-  for word in words:
-      if word[0] == "x":
-          xciting.append(word)
-      else: abc.append(word)
-  abc.sort()
-  xciting.sort()
-  xciting.extend(abc)
-  return xciting
+  #sort words by the second letter
+  letter2 = sorted(words, key=lambda w : w[1])
+  #sorted() is stable so previous sorting is preserved when we then sort by first letter
+  #sort xes to the front (numbers come before letters) but otherwise follow alphabet
+  xabc = sorted(letter2, key=lambda w : "1" if w[0] == "x" else w[0])
+  return xabc
 
 
 # C. sort_last
