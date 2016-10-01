@@ -36,10 +36,15 @@ def match_ends(words):
 # before combining them.
 def front_x(words):
   xciting = []
-  
+  abc = []
   for word in words:
-      if 
-  return
+      if word[0] == "x":
+          xciting.append(word)
+      else: abc.append(word)
+  abc = sorted(abc)
+  xciting = sorted(xciting)
+  xciting.extend(abc)
+  return xciting
 
 
 
